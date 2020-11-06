@@ -34,8 +34,8 @@ html, body {
 }
 
 .anim-typewriter {
-      animation: typewriter 4s steps(40) 1s 1 normal both,
-      blinkTextCussor 500ms steps(40) infinite normal;
+      animation: typewriter 5s steps(80) 2s 1 normal both,
+      blinkTextCussor 500ms steps(80) infinite normal;
 }
 
 @keyframes typewriter {
@@ -43,7 +43,7 @@ html, body {
             width: 0;
       }
       to {
-            width: 18em;
+            width: 21em;
       }
 }
 
@@ -53,7 +53,7 @@ html, body {
                   width: 0;
             }
             to {
-                  width: 17em;
+                  width: 21em;
             }
       }
 }
@@ -65,6 +65,16 @@ html, body {
       to {
             border-right-color: transparent;
       }
+}
+
+#music{
+      width: 24em;
+      top: 50%;
+      margin: auto;      
+      text-align: center;
+      white-space: nowrap;
+      overflow: hidden;
+      transform: translateY(-600%);
 }
 
 /*--------------- navigation --------------- */
