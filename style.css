@@ -74,7 +74,8 @@ html, body {
       text-align: center;
       white-space: nowrap;
       overflow: hidden;
-      transform: translateY(-600%);
+      transform: translateY(-400%);
+      transform: translateX(0%);
 }
 
 /*--------------- navigation --------------- */
