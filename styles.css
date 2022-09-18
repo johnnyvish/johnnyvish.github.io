@@ -11,11 +11,10 @@ body {
 
 
 #piano {
-    height: 37vh;
+    height: 34vh;
     width: 67vw;
-    padding: 7vh 2vw 1vw 3vh;
     background-color: black;
-    border-radius: 10px;
+   
 }
 
 .keys {
@@ -39,6 +38,7 @@ body {
     border: solid #000 2px;
     box-sizing: border-box;
 }
+
 
 .black-key {
     width: 3vw;
