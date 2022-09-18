@@ -1,0 +1,90 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    background-color: salmon;
+}
+
+
+#piano {
+    height: 37vh;
+    width: 67vw;
+    padding: 7vh 2vw 1vw 3vh;
+    background-color: black;
+    border-radius: 10px;
+}
+
+.keys {
+    position: relative;
+}
+
+.white-keys {
+    display: flex;
+}
+
+.black-keys {
+    position: relative;
+    display: flex;
+}
+
+.white-key {
+    width: 37vw;
+    height: 34vh;
+    background-color: #fff;
+    border-radius: 0 0 5px 5px;
+    border: solid #000 2px;
+    box-sizing: border-box;
+}
+
+.black-key {
+    width: 3vw;
+    height: 19vh;
+    border-radius: 0 0 5px 5px;
+    box-sizing: border-box;
+    position: absolute;
+    background-color: #000;
+}
+
+.black-key:nth-child(1) {
+    left: 3vw;
+}
+
+.black-key:nth-child(2) {
+    left: 8vw;
+}
+
+.black-key:nth-child(3) {
+    left: 17.5vw;
+}
+
+.black-key:nth-child(4) {
+    left: 22.5vw;
+}
+
+.black-key:nth-child(5) {
+    left: 27.5vw;
+}
+
+.black-key:nth-child(6) {
+    left: 37vw;
+}
+
+.black-key:nth-child(7) {
+    left: 41.5vw;
+}
+
+.black-key:nth-child(8) {
+    left: 51vw;
+}
+
+.black-key:nth-child(9) {
+    left: 56vw;
+}
+
+.black-key:nth-child(10) {
+    left: 61vw;
+}
