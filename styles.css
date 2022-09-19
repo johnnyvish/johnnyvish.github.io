@@ -9,7 +9,7 @@ body {
     flex-direction: column;
     justify-content: center;
     width: 100vw;
-    height: 100vh;
+    height: 200vh;
     align-items: center;
     background: linear-gradient(180deg, #f63e3e 0%, #ff7b7b 50%, #ffa7a7 100%);
 }
@@ -79,8 +79,8 @@ body {
     top: 0.5vw;
     text-transform: uppercase;
     text-align: center;
-    font-size: 1.3vw;
-    font-family: 'Roboto', sans-serif;
+    font-size: 1.1vw;
+    font-family: 'Orbitron', sans-serif;
 }
 
 .display-sound{

@@ -37,6 +37,8 @@ function nextNote(c) {
     return String.fromCharCode(c.charCodeAt(0) + 1);
 }
 
+alert("Please connect a midi device to your computer or play with your mouse")
+
 if (navigator.requestMIDIAccess) {
     navigator.requestMIDIAccess().then(onMIDISuccess, onMIDIFailure);
 }
@@ -54,6 +56,7 @@ function onMIDISuccess(midiAccess) {
 
 function onMIDIFailure() {
     console.log('Could not access your MIDI devices.');
+
 }
 
 function onMIDIMessage(event) {
