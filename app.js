@@ -1,3 +1,35 @@
+const arrows = document.querySelectorAll('.left-arrow, .right-arrow')
+
+
+var arr = ["grand-piano", "classical", "pop", "softest", "bright"];
+let pointer = 0;
+
+arrows.forEach(arrow => {
+    arrow.addEventListener('mousedown', () => {
+        if (arrow.classList.contains('left-arrow')) {
+            arrow.classList.add('active')
+            pointer--;
+            if (pointer < 0) {
+                pointer = arr.length - 1;
+            }
+        }
+        if (arrow.classList.contains('right-arrow')) {
+            arrow.classList.add('active')
+            pointer++;
+            if (pointer > arr.length - 1) {
+                pointer = 0;
+            }
+        }
+
+        document.getElementById('sound-selection-text').innerHTML = arr[pointer];
+    })
+    arrow.addEventListener('mouseup', () => {
+        arrow.classList.remove('active')
+    }
+    )
+})
+
+
 function nextNote(c) {
     if (c == 'G') {
         return 'A';
@@ -30,9 +62,9 @@ function onMIDIMessage(event) {
     let noteOctave = midiNoteToOctave(note);
     // if notename is more than one character
     if (noteName.length > 1) {
-        soundPlayer = new Audio('/grand-piano/' + noteName[0] + 'sharp' + noteOctave + '.mp3')
+        soundPlayer = new Audio('/' + arr[pointer] + '/' + noteName[0] + 'sharp' + noteOctave + '.mp3')
     } else {
-        soundPlayer = new Audio('/grand-piano/' + noteName + noteOctave + '.mp3')
+        soundPlayer = new Audio('/' + arr[pointer] + '/' + noteName + noteOctave + '.mp3')
     }
    
     if (velocity > 0){
@@ -89,7 +121,7 @@ pianoKeys.forEach(pianoKey=> {
             note += 'sharp'
         }
 
-        soundPlayer = new Audio('/grand-piano/' + note + octave + '.mp3')
+        soundPlayer = new Audio('/' + arr[pointer] + '/' + note + octave + '.mp3')
         soundPlayer.play()
 
         document.getElementById('note-name').classList.add('active')

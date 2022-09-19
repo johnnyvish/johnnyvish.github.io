@@ -9,9 +9,9 @@ body {
     flex-direction: column;
     justify-content: center;
     width: 100vw;
-    height: 1000vh;
+    height: 100vh;
     align-items: center;
-    background: linear-gradient(180deg, #f63e3e 0%, #7ae90a 50%, #2c04f5 100%);
+    background: linear-gradient(180deg, #f63e3e 0%, #ff7b7b 50%, #ffa7a7 100%);
 }
  
 .logo{ 
@@ -20,13 +20,13 @@ body {
     justify-content: center;
     align-items: center;
     font-family: 'Roboto', sans-serif;
-    font-size: 1.5rem;
+    font-size: 2vw;
     color: #fff;
     text-transform: uppercase;
-    letter-spacing: 0.2rem;
+    letter-spacing: 0.5vw;
     font-weight: 700;
     text-shadow: 0 6px 10px #000;
-    z-index: 4;
+    z-index: 20;
     
 }
 
@@ -55,31 +55,79 @@ body {
     position: fixed;
     top: 15vh;
     display: flex;
-    background-color: black;
+    background: black;
     border: 10px solid black;
     padding-top: 5vw;
 }
 
+/* make a red triangle arrow pointing to the left*/
+.change-sound{
+    position: fixed;
+    display: flex;
+    top:16vh;
+    /* change the spacing between child div elements*/
+
+    background: rgb(45, 45, 45);
+    border: 2px solid white;
+
+    z-index: 10;
+}
+
+#sound-selection-text{
+    position:relative;
+    color: white;
+    top: 0.5vw;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.3vw;
+    font-family: 'Roboto', sans-serif;
+}
+
+.display-sound{
+    position: relative;
+    width: 10vw;
+    height: 4vw;
+    background: black;
+}
+
+.left-arrow, .right-arrow{
+    filter: invert(100%);
+    position: relative;
+    top: 1vw;
+    width: 5vw;
+    height: 2vw;
+}
+
+.left-arrow.active{
+    transform: translateY(2px);
+}
+
+.right-arrow.active{
+    transform: translateY(2px);
+}
+
+/* make a digital rectangular display for text*/
+
 .white-key{
     width: 1.75vw;
     height: 10vw;
-    background-color: white;
+    background: white;
     border: 1px solid black;
 }
 
 .white-key.active{
-    background-color: #f63e3e;
+    background: #f63e3e;
     transform: translateY(2px);
 }
 
 .white-key.hover{
-    background-color: #f6ce3e;
+    background: #f6ce3e;
 }
 
 .black-key{
     width: 1.4vw;
     height: 6vw;
-    background: black;
+    background: linear-gradient(180deg, rgb(54, 54, 54) 0%, rgb(54, 54, 54) 80%, rgb(0, 0, 0) 90%, rgb(0, 0, 0) 100%);
     border: 2px solid black;
     z-index: 2;
     margin-left: -0.7vw;
@@ -88,12 +136,12 @@ body {
 }
 
 .black-key.active{
-    background-color: #f63e3e;
+    background: #f63e3e;
     transform: translateY(2px);
 }
 
 .black-key.hover{
-    background-color: #f6ce3e;
+    background: #f6ce3e;
 }
 
 
