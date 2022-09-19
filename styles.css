@@ -9,9 +9,9 @@ body {
     flex-direction: column;
     justify-content: center;
     width: 100vw;
-    height: 105vh;
+    height: 1000vh;
     align-items: center;
-    background: linear-gradient(180deg, #f63e3e 0%, #fd6d6d 50%, #f08686 100%);
+    background: linear-gradient(180deg, #f63e3e 0%, #7ae90a 50%, #2c04f5 100%);
 }
  
 /* pretty minimalistic logo that says "JS Piano" on the top left of the screen */
@@ -32,13 +32,36 @@ body {
     
 }
 
+#note-name{
+    position: fixed;
+    top: 50vh;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 5rem;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    font-weight: 700;
+    text-shadow: 0 6px 10px #000;
+    z-index: 4;
+}
+
+#note-name.active{
+    text-shadow: 0 10px 10px black;
+    transform: translateY(2px);
+    /* make it slightly bigger to appear to pop out of the page */
+    font-size: 5.5rem;
+}
+
 
 .piano {
-    position: absolute;
-    top: 20vh;
+    position: fixed;
+    top: 15vh;
     display: flex;
     background-color: black;
-    border: 5px solid black;
+    border: 10px solid black;
+    padding-top: 5vw;
 }
 
 .white-key{
@@ -61,7 +84,7 @@ body {
 .black-key{
     width: 1.4vw;
     height: 6vw;
-    background-color: black;
+    background: black;
     z-index: 2;
     margin-left: -0.7vw;
     margin-right: -0.7vw;

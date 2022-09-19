@@ -350,29 +350,72 @@ Synth.loadSoundProfile({
 });
 
 
-
-const pianoKeys = document.querySelectorAll('.white-key, .black-key')
-
-
-
 var testInstance = new AudioSynth;
 var piano = testInstance.createInstrument('piano');
 
+if (navigator.requestMIDIAccess) {
+    navigator.requestMIDIAccess().then(onMIDISuccess, onMIDIFailure);
+}
 
+function onMIDISuccess(midiAccess) {
+
+    const inputs = midiAccess.inputs;
+
+    inputs.forEach(input => {
+        input.addEventListener('midimessage', onMIDIMessage);
+    }
+    )
+    
+}
+
+function onMIDIFailure() {
+    console.log('Could not access your MIDI devices.');
+}
+
+
+function onMIDIMessage(event) {
+    const [command, note, velocity] = event.data;
+    let noteName = noteToName(note);
+    let noteOctave = noteToOctave(note);
+    if (velocity > 0){
+        document.getElementById('note-name').innerHTML = noteName;
+        piano.play(noteName, noteOctave, 3);
+        document.getElementById(noteName+noteOctave).classList.add('active')
+        document.getElementById('note-name').innerHTML = noteName + noteOctave;
+    }
+    if (velocity == 0){
+        document.getElementById(noteName+noteOctave).classList.remove('active')
+    }
+
+}
+
+function noteToName(note) {
+    const noteNames = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
+    return noteNames[note % 12];
+}
+
+function noteToOctave(note) {
+    return Math.floor(note / 12) - 1;
+}
+
+const pianoKeys = document.querySelectorAll('.white-key, .black-key')
 
 
 pianoKeys.forEach(pianoKey=> {
    
     pianoKey.addEventListener('mouseover', () => {
+        document.getElementById('note-name').innerHTML = pianoKey.id;
         pianoKey.classList.add('hover')
     })
     pianoKey.addEventListener('mouseout', () => {
+        document.getElementById('note-name').innerHTML = '';
         pianoKey.classList.remove('hover')
     })
 
     pianoKey.addEventListener('mousedown', () => {
-        // the first character of the id is the note if the key is white
-        // the first two characters of the id is the note if the key is black
+
+        document.getElementById('note-name').classList.add('active')
+       
         let note = 'C'
         let octave = pianoKey.id.charAt(pianoKey.id.length - 1)
         if (pianoKey.classList.contains('white-key')) {
@@ -387,6 +430,7 @@ pianoKeys.forEach(pianoKey=> {
     }
     )
     pianoKey.addEventListener('mouseup', () => {
+        document.getElementById('note-name').classList.remove('active')
         pianoKey.classList.remove('active')
         pianoKey.classList.add('hover')
     }
