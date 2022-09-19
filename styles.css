@@ -14,8 +14,6 @@ body {
     background: linear-gradient(180deg, #f63e3e 0%, #7ae90a 50%, #2c04f5 100%);
 }
  
-/* pretty minimalistic logo that says "JS Piano" on the top left of the screen */
-
 .logo{ 
     position: fixed;
     top: 0vh;
@@ -40,7 +38,6 @@ body {
     font-family: 'Roboto', sans-serif;
     font-size: 5rem;
     color: white;
-    text-transform: uppercase;
     letter-spacing: 0.2rem;
     font-weight: 700;
     text-shadow: 0 6px 10px #000;
@@ -50,7 +47,6 @@ body {
 #note-name.active{
     text-shadow: 0 10px 10px black;
     transform: translateY(2px);
-    /* make it slightly bigger to appear to pop out of the page */
     font-size: 5.5rem;
 }
 
@@ -73,7 +69,6 @@ body {
 
 .white-key.active{
     background-color: #f63e3e;
-    /* translate 2 px down to make it look like it's being pressed */
     transform: translateY(2px);
 }
 
@@ -85,6 +80,7 @@ body {
     width: 1.4vw;
     height: 6vw;
     background: black;
+    border: 2px solid black;
     z-index: 2;
     margin-left: -0.7vw;
     margin-right: -0.7vw;
