@@ -10,10 +10,10 @@ const starsGeometry = new THREE.BufferGeometry();
 const starsMaterial = new THREE.PointsMaterial({ color: 0xFFFFFF, size: 2});
 
 const starPoints = [];
-for (let i = 0; i < 20000; i++) {
-  const x = THREE.MathUtils.randFloatSpread(2000);
-  const y = THREE.MathUtils.randFloatSpread(2000);
-  const z = THREE.MathUtils.randFloatSpread(2000);
+for (let i = 0; i < 200000; i++) {
+  const x = THREE.MathUtils.randFloatSpread(5000);
+  const y = THREE.MathUtils.randFloatSpread(5000);
+  const z = THREE.MathUtils.randFloatSpread(5000);
   starPoints.push(x, y, z);
 }
 
@@ -34,7 +34,7 @@ const earthGeometry = new THREE.SphereGeometry(1, 64, 64);
 const earthTexture = loader.load('earth.jpeg');
 const earthMaterial = new THREE.MeshPhongMaterial({ map: earthTexture });
 const earth = new THREE.Mesh(earthGeometry, earthMaterial);
-earth.position.set(25,25,25);
+earth.position.set(0,0,0);
 scene.add(earth);
 
 // Sun
