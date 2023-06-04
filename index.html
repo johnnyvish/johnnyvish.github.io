@@ -5,17 +5,30 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
     <title>Look Up</title>
-    <script type="module" crossorigin src="/assets/index-56d3175a.js"></script>
-    <link rel="stylesheet" href="/assets/index-1b115932.css">
+    <script type="module" crossorigin src="/assets/index-f889c52d.js"></script>
+    <link rel="stylesheet" href="/assets/index-34696954.css">
   </head>
-  <body class="font-title overflow-hidden flex flex-col items-center h-screen"> 
-    <div id="custom-scrollbar" class="fixed top-0 right-0 w-1 h-screen bg-white/0">
-      <div id="scrollbar-handle" class="relative w-full h-8 bg-white bg-opacity-100"></div>
+  <body class="font-title overflow-hidden flex flex-col items-center h-screen">
+    <div
+      id="custom-scrollbar"
+      class="fixed top-0 right-0 w-2 h-screen bg-white/0"
+    >
+      <div
+        id="scrollbar-handle"
+        class="relative w-full h-8 bg-white bg-opacity-100"
+      ></div>
     </div>
-    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center space-y-5">
-      <div class="title flex text-center text-9xl font-light leading-none text-white/80">
+    <div
+      class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center space-y-5"
+    >
+      <div
+        class="title flex text-center text-9xl font-light leading-none text-white/80"
+      >
         <div>L</div>
         <div>O</div>
         <div>O</div>
@@ -23,21 +36,38 @@
         <div>U</div>
         <div>P</div>
       </div>
-      <button class="explore-button font-button text-black bg-white border-0 py-3 px-8 text-3xl rounded-xl transition-colors duration-300 hover:bg-blue-700/80 hover:text-white">Explore</button>
+      <button
+        class="explore-button font-button text-black bg-white border-0 py-3 px-8 text-3xl rounded-xl transition-colors duration-300 hover:bg-blue-700/80 hover:text-white"
+      >
+        Explore
+      </button>
     </div>
-    <i id = "info-icon" class="fas fa-info-circle absolute top-5 right-5 text-2xl text-white z-10"></i>
-    </div>
+    <button
+      id="about-button"
+      class="about-button absolute top-5 right-5 text-2xl text-white z-10"
+    >
+      About
+    </button>
+    <button
+      id="close-button"
+      class="close-button absolute top-5 right-5 text-2xl text-white z-10 hidden"
+    >
+      X
+    </button>
     <!-- Scroll Indicator -->
-    <div id="scroll-indicator" class="absolute bottom-5 left-1/2 transform -translate-x-1/2 text-white text-2xl opacity-0 flex flex-col items-center space-y-1">
+    <div
+      id="scroll-indicator"
+      class="absolute bottom-5 left-1/2 transform -translate-x-1/2 text-white text-2xl opacity-0 flex flex-col items-center space-y-1"
+    >
       <span>Scroll</span>
       <i class="fas fa-angle-double-down"></i>
     </div>
     <!-- <div class="timeline-container">
-      <div class="timeline">
-      </div>
-      <div class="asteroid" id="asteroid">
-      </div>
-    </div> -->
+    <div class="timeline">
+    </div>
+    <div class="asteroid" id="asteroid">
+    </div>
+  </div> -->
     <div id="main-content">
       <canvas class="webgl"></canvas>
     </div>
