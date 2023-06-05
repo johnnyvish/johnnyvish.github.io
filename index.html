@@ -14,12 +14,11 @@
     <link rel="stylesheet" href="/assets/index-a4229ada.css">
   </head>
   <body class="flex items-center h-screen overflow-hidden flex-col">
-    <object
+    <iframe
       id="svg-logo"
       class="h-[35vh] w-auto absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-      data="/images/yellowdot2.svg"
-      type="image/svg+xml"
-    ></object>
+      src="/images/yellowdot2.svg"
+    ></iframe>
 
     <div
       id="loading-bar-background"
@@ -79,12 +78,6 @@
       <span>Scroll to begin</span>
       <i class="fas fa-angle-down"></i>
     </div>
-    <!-- <div class="timeline-container">
-    <div class="timeline">
-    </div>
-    <div class="asteroid" id="asteroid">
-    </div>
-  </div> -->
     <div id="main-content">
       <canvas class="webgl"></canvas>
     </div>
