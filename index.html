@@ -10,13 +10,13 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
     <title>Look Up</title>
-    <script type="module" crossorigin src="/assets/index-220c46b7.js"></script>
-    <link rel="stylesheet" href="/assets/index-a4229ada.css">
+    <script type="module" crossorigin src="/assets/index-973c53b9.js"></script>
+    <link rel="stylesheet" href="/assets/index-b4c672ed.css">
   </head>
   <body class="flex items-center h-screen overflow-hidden flex-col">
     <object
       id="svg-logo"
-      class="h-[35vh] w-auto absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+      class="h-[35vh] w-auto absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 invisible"
       data="/images/yellowdot2.svg"
       type="image/svg+xml"
     ></object>
@@ -44,7 +44,7 @@
     </div>
 
     <div
-      class="title font-newake text-9xl font-light leading-none text-white/80 flex flex-row invisible absolute transform -translate-x-1/2 text-center top-[43%] left-1/2"
+      class="title font-newake text-9xl font-light leading-none text-white/90 flex flex-row invisible absolute transform -translate-x-1/2 text-center top-[43%] left-1/2"
     >
       <div>L</div>
       <div>O</div>
@@ -55,7 +55,7 @@
     </div>
 
     <button
-      class="explore-button font-dmsans text-3xl bg-white text-black border-0 py-3 px-8 rounded-full transition-colors duration-300 hover:bg-yellow-400/80 hover:text-white invisible absolute transform -translate-x-1/2 -translate-y-1/2 top-[64%] left-1/2"
+      class="explore-button font-dmsans text-3xl bg-red-800/80 text-white border-0 py-3 px-8 rounded-full transition-colors duration-300 hover:bg-yellow-400/80 hover:text-white invisible absolute transform -translate-x-1/2 -translate-y-1/2 top-[64%] left-1/2"
     >
       Explore
     </button>
@@ -79,6 +79,10 @@
       <span>Scroll to begin</span>
       <i class="fas fa-angle-down"></i>
     </div>
+    <div class="fixed bottom-3 right-3 text-white text-xs">
+      &copy; 2023 Yellow Dot Studios. All Rights Reserved.
+    </div>
+
     <div id="main-content">
       <canvas class="webgl"></canvas>
     </div>
