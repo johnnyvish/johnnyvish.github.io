@@ -10,17 +10,10 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
     <title>Look Up</title>
-    <script type="module" crossorigin src="/assets/index-3f70fd8a.js"></script>
-    <link rel="stylesheet" href="/assets/index-d1121cd0.css">
+    <script type="module" crossorigin src="/assets/index-5ae34c62.js"></script>
+    <link rel="stylesheet" href="/assets/index-2d38640d.css">
   </head>
   <body class="flex items-center h-screen overflow-hidden flex-col bg-black">
-    <object
-      id="svg-logo"
-      class="h-[30vh] w-auto absolute transform -translate-x-1/2 -translate-y-1/2 top-[42%] left-1/2 invisible"
-      data="/images/yellowdot2.sg"
-      type="image/svg+xml"
-    ></object>
-
     <div
       id="loading-bar-background"
       class="w-[60vh] h-1 bg-white opacity-1 absolute transform -translate-x-1/2 bottom-[40%] left-1/2 invisible"
@@ -36,57 +29,84 @@
       </div>
     </div>
     <img
-      class="yellow-dot-logo h-20 w-auto absolute invisible top-6 left-6"
+      class="yellow-dot-logo h-16 w-auto absolute invisible top-[2%] left-[2%]"
       src="/images/yellowdot.png"
       alt="Logo"
     />
+
     <div
-      id="custom-scrollbar"
-      class="w-2 h-screen bg-white/0 fixed top-0 right-0"
+      id="title-page"
+      class="absolute top-[35%] flex flex-col space-y-0 justify-center items-center text-center w-full invisible"
     >
       <div
-        id="scrollbar-handle"
-        class="w-full h-8 bg-white bg-opacity-100 relative invisible"
-      ></div>
+        class="title font-newake text-[6rem] xsm:text-[7rem] sm:text-[8rem] font-light leading-none text-white/90 flex flex-row"
+      >
+        <div>L</div>
+        <div>O</div>
+        <div>O</div>
+        <div>K&nbsp;</div>
+        <div>U</div>
+        <div>P</div>
+      </div>
+
+      <button
+        class="explore-button font-dmsans text-2xl xsm:text-3xl sm:text-4xl bg-red-800/80 text-white border-0 py-2 px-7 xsm:py-3 xsm:px-8 rounded-full transition-colors duration-300 hover:bg-yellow-400/80 hover:text-white"
+      >
+        Explore
+      </button>
     </div>
 
     <div
-      class="title font-newake text-6xl xxsm:text-7xl xsm:text-8xl sm:text-9xl font-light leading-none text-white/90 flex flex-row invisible absolute transform -translate-x-1/2 text-center top-[43%] left-1/2"
-    >
-      <div>L</div>
-      <div>O</div>
-      <div>O</div>
-      <div>K&nbsp;</div>
-      <div>U</div>
-      <div>P</div>
-    </div>
+      id="white-circle"
+      class="bg-white rounded-full w-0 h-0 absolute top-0 right-0 z-10 invisible"
+    ></div>
 
     <button
-      class="explore-button font-dmsans text-2xl xsm:text-3xl bg-red-800/80 text-white border-0 py-2 px-7 xsm:py-3 xsm:px-8 rounded-full transition-colors duration-300 hover:bg-yellow-400/80 hover:text-white invisible absolute transform -translate-x-1/2 -translate-y-1/2 top-[59%] xsm:top-[64%] left-1/2"
+      id="menu-button"
+      class="flex flex-col justify-around w-6 h-6 bg-transparent border-none cursor-pointer p-0 invisible absolute top-[20px] right-[20px] z-10"
     >
-      Explore
+      <div class="w-6 h-px bg-white"></div>
+      <div class="w-6 h-px bg-white"></div>
+      <div class="w-6 h-px bg-white"></div>
     </button>
 
-    <button
-      id="about-button"
-      class="font-newake text-2xl text-white invisible absolute top-5 right-5 z-10"
-    >
-      About
-    </button>
     <button
       id="close-button"
-      class="text-2xl text-white hidden absolute top-5 right-5 z-10"
+      class="text-2xl text-black hidden absolute top-[18px] right-[23px] z-10"
     >
       X
     </button>
     <div
       id="scroll-indicator"
-      class="font-dmsans text-2xl text-white opacity-0 flex flex-col items-center space-y-1 absolute transform -translate-x-1/2 bottom-[5%] left-1/2"
+      class="font-dmsans text-2xl text-white opacity-0 flex flex-col items-center space-y-1 absolute transform -translate-x-1/2 bottom-[7%] left-1/2"
     >
-      <span>Scroll to begin</span>
+      <span>Scroll</span>
       <i class="fas fa-angle-down"></i>
     </div>
-    <div class="fixed bottom-3 right-3 text-white text-xs">
+
+    <div id="timeline-container" class="fixed bottom-10 w-full invisible">
+      <div class="relative w-[35%] h-[0.8px] bg-gray-300 mx-auto mt-10">
+        <div
+          id="timeline-dot"
+          class="absolute right-0 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-white rounded-full"
+        ></div>
+        <p
+          id="timeline-year"
+          class="absolute font-dmsans w-full text-center text-[1.3rem] text-white transform -translate-y-12"
+        ></p>
+        <div
+          id="timeline-live"
+          class="absolute font-dmsans left-0 top-1/2 transform -translate-y-10 px-5 py-[0.5] bg-blue-500 text-white rounded-full hover:bg-red-500 transition-colors duration-200"
+        >
+          LIVE
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="copyright"
+      class="fixed bottom-3 right-[1%] text-white text-xs z-50"
+    >
       &copy; 2023 Yellow Dot Studios. All Rights Reserved.
     </div>
 
