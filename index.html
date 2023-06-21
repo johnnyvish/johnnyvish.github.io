@@ -2,117 +2,43 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/images/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
     <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css"
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
     <title>Look Up</title>
-    <script type="module" crossorigin src="/assets/index-54bfdebb.js"></script>
-    <link rel="stylesheet" href="/assets/index-7432a1bb.css">
+    <style>
+      #knob {
+        transition: transform 0.1s;
+      }
+    </style>
+    <script type="module" crossorigin src="/assets/index-d717bebb.js"></script>
   </head>
-  <body class="flex items-center h-screen overflow-hidden flex-col bg-black">
-    <div
-      id="loading-bar-background"
-      class="w-[60vh] h-1 bg-white opacity-1 absolute transform -translate-x-1/2 bottom-[40%] left-1/2 invisible"
-    >
-      <div id="loading-bar-foreground" class="w-0 h-full bg-yellow-400"></div>
-      <div id="loading-bar-text" class="text-white font-dmsans mt-[2%]">
-        "Government leaders, the media, and heads of industry need to stop
-        living in a world that fits their needs and feels familiar, and start
-        living in the world as it is. The alternative is unimaginably grim."
-        <br />
-        <br />
-        - Adam McKay
-      </div>
-    </div>
-    <img
-      class="yellow-dot-logo h-16 w-auto absolute invisible top-[2%] left-[2%]"
-      src="/images/yellowdot.png"
-      alt="Logo"
-    />
-
-    <div
-      id="title-page"
-      class="absolute top-[35%] flex flex-col space-y-0 justify-center items-center text-center w-full invisible"
-    >
-      <div
-        class="title font-newake text-[6rem] xsm:text-[7rem] sm:text-[8rem] font-light leading-none text-white/90 flex flex-row"
-      >
-        <div>L</div>
-        <div>O</div>
-        <div>O</div>
-        <div>K&nbsp;</div>
-        <div>U</div>
-        <div>P</div>
-      </div>
-
-      <button
-        class="explore-button font-dmsans text-2xl xsm:text-3xl sm:text-4xl bg-red-800/80 text-white border-0 py-2 px-7 xsm:py-3 xsm:px-8 rounded-full transition-colors duration-300 hover:bg-yellow-400/80 hover:text-white"
-      >
-        Explore
-      </button>
-    </div>
-
-    <div
-      id="white-circle"
-      class="bg-white rounded-full w-0 h-0 absolute top-0 right-0 z-10 invisible"
-    ></div>
-
-    <button
-      id="menu-button"
-      class="flex flex-col justify-around w-6 h-6 bg-transparent border-none cursor-pointer p-0 invisible absolute top-[20px] right-[20px] z-10"
-    >
-      <div class="w-6 h-px bg-white"></div>
-      <div class="w-6 h-px bg-white"></div>
-      <div class="w-6 h-px bg-white"></div>
-    </button>
-
-    <button
-      id="close-button"
-      class="text-2xl text-black hidden absolute top-[18px] right-[23px] z-10"
-    >
-      X
-    </button>
-    <div
-      id="scroll-indicator"
-      class="font-dmsans text-2xl text-white opacity-0 flex flex-col items-center space-y-1 absolute transform -translate-x-1/2 bottom-[7%] left-1/2"
-    >
-      <span>Scroll</span>
-      <i class="fas fa-angle-down"></i>
-    </div>
-
-    <div id="timeline-container" class="fixed bottom-10 w-full invisible">
-      <div class="relative w-[35%] h-[0.8px] bg-gray-300 mx-auto mt-10">
-        <div
-          id="timeline-dot"
-          class="absolute right-0 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-white rounded-full"
-        ></div>
-        <p
-          id="timeline-year"
-          class="absolute font-dmsans w-full text-center text-[1.3rem] text-white transform -translate-y-12"
-        ></p>
-        <div
-          id="timeline-live"
-          class="absolute font-dmsans right-0 top-1/2 transform -translate-y-10 px-5 py-[0.5] bg-blue-500 text-white rounded-full hover:bg-red-500 transition-colors duration-200"
-        >
-          GO LIVE
-        </div>
-      </div>
-    </div>
-
-    <div
-      id="copyright"
-      class="fixed bottom-3 right-[1%] text-white text-xs z-50"
-    >
-      &copy; 2023 Yellow Dot Studios. All Rights Reserved.
-    </div>
-
+  <body
+    class="flex flex-col items-center justify-center h-screen overflow-hidden bg-black text-white"
+  >
     <div id="main-content">
       <canvas class="webgl"></canvas>
     </div>
+    <div id="time-control" class="relative bottom-20 w-1/2">
+      <button
+        id="live-button"
+        class="absolute top-0 right-0 bg-red-500 text-white px-3 py-1 hover:bg-green-500 transition-colors duration-200 rounded-full"
+      >
+        LIVE
+      </button>
+      <div id="date-display" class="text-2xl mb-4 text-center">01/01/1750</div>
+      <div id="slider-container" class="relative">
+        <div id="slider" class="h-1 bg-gray-700 rounded-full"></div>
+        <button
+          id="knob"
+          class="absolute h-6 w-6 rounded-full transform -translate-x-1/2 -translate-y-1/2 bg-white left-1/2"
+          draggable="true"
+        ></button>
+      </div>
+    </div>
+
     
   </body>
 </html>
